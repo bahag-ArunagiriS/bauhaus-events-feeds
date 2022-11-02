@@ -1,4 +1,4 @@
-# mysite
+# bauhaus-events-feeds
 
 Wei Lin <br />
 Sanjeev Arunagiri <br />
