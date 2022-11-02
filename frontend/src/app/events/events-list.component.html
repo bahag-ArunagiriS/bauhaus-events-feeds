@@ -1,1 +1,10 @@
 <p>events-list works!</p>
+<div>
+  <tr *ngFor="let event of modelEvent">
+    <td>{{event.title}}</td>
+    <td>{{event.id}}</td>
+    <td>{{event.description}}</td>
+    <td>{{event.location}}</td>
+    <!-- <td>{{event.likes}}</td> -->
+  </tr>
+</div>
