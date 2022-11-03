@@ -11,6 +11,11 @@ export class EventsService {
   constructor(private httpClient: HttpClient) {}
 
   getEvents(): Observable<Event[]> {
-    return this.httpClient.get<Event[]>(`${environment.url}`);
+    return this.httpClient.get<Event[]>
+    (`${environment.url}/events`);
+  }
+  addEvent(event: Event): Observable<Event> {
+    return this.httpClient.post<Event>
+    (`${environment.url}/event`, event)
   }
 }
