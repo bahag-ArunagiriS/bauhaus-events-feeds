@@ -6,5 +6,9 @@
     <td>{{ event.description }}</td>
     <td>{{ event.location }}</td>
     <!-- <td>{{event.likes}}</td> -->
+    <a [routerLink]="['event/edit/' + event.id]">
+      <button>Edit</button>
+    </a>
   </tr>
 </div>
+

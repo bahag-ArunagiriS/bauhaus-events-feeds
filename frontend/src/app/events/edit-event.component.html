@@ -1,0 +1,21 @@
+<section id="editEvent">
+  <h2>Edit/Delete an Event</h2>
+  <form [formGroup]="eventForm" (ngSubmit)="edit()">
+    Title:<input type="text" formControlName="title" [value]="event.title" />
+    <br />
+    Description:<input
+      type="text"
+      formControlName="description"
+      [value]="event.description"
+    />
+    <br />
+    Location:<input
+      type="text"
+      formControlName="location"
+      [value]="event.location"
+    />
+    <br />
+    <button type="submit">Edit Event</button>
+  </form>
+  <button type="button" (click)="delete(event.id)">Delete Event</button>
+</section>
