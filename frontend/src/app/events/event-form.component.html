@@ -1,0 +1,36 @@
+<form [formGroup]="eventForm" (ngSubmit)="add()"  >
+  <div class="btn-group" role="group" aria-label="Third group">
+    <input type="text"  placeholder="Title"  formControlName="title">
+    <input type="text"  placeholder="Description"  formControlName="description">
+    <input type="text"  placeholder="Location"  formControlName="location">
+    <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">
+      Add Event</button>
+  </div>
+  <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger" >
+    <div *ngIf="title.errors?.['required']">
+      Title is required
+    </div>
+    <div *ngIf="title.errors?.['minlength']">
+      Title must be at least 3 characters
+    </div>
+    <div *ngIf="title.errors?.['pattern']">
+      Only letters and numbers are allowed
+    </div>
+  </div>
+  <div *ngIf="description.errors?.['required'] && !description.pristine" class="alert alert-danger">
+      Description is required
+  </div>
+  <div *ngIf="location.errors?.['required'] && !location.pristine" class="alert alert-danger">
+    Location is required
+  </div>
+</form>
+
+
+
+<div class="alert alert-danger" class="col-md-6">
+  <label for="validationServer03" class="form-label">City</label>
+  <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+  <div  class="invalid-feedback">
+    Please provide a valid city.
+  </div>
+</div>
