@@ -1,5 +1,6 @@
 <app-event-form (createEvent)="addEvent($event)" ></app-event-form>
-<div class="row">
+<label></label>
+<div class="row g-3">
   <div class="col-lg-8 col-sm-offset-1">
     <table class="table table-bordered table-striped">
       <thead>
@@ -10,13 +11,11 @@
       </tr>
       </thead>
       <tbody>
-
-      //looping through the modelEvents
+      <!--looping through the modelEvents-->
       <tr *ngFor="let event of modelEvents">
         <td>{{event.title}}</td>
         <td>{{event.description}}</td>
         <td>{{event.location}}</td>
-
       </tr>
       </tbody>
     </table>

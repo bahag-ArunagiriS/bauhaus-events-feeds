@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Event} from "../models/event";
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-event-form',
@@ -29,10 +31,13 @@ export class EventFormComponent implements OnInit {
   // add function
   add(): void {
     const form = this.eventForm.value;
+
     //emit is used to fire an event
     this.createEvent.emit(
       new Event(form.title,'',form.description, form.location,0));
   }
+
+
   //fetch title
   get title() { return this.eventForm.get('title')!; }
 

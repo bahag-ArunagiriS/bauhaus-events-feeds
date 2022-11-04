@@ -1,14 +1,26 @@
-<form [formGroup]="eventForm" (ngSubmit)="add()"  >
-  <div class="btn-group" role="group" aria-label="Third group">
-    <input type="text"  placeholder="Title"  formControlName="title">
-    <input type="text"  placeholder="Description"  formControlName="description">
-    <input type="text"  placeholder="Location"  formControlName="location">
+<form class="row g-3" [formGroup]="eventForm" (ngSubmit)="add()"  >
+
+  <div class="col-md-3">
+    <label for="validationCustom01" class="form-label">Title</label>
+    <input type="text"  class="form-control"  id="validationCustom01" formControlName="title" required>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Description</label>
+    <textarea type="text" class="form-control" id="exampleFormControlTextarea1" formControlName="description" rows="3"></textarea>
+  </div>
+  <div class="col-md-5">
+    <label for="validationCustom01" class="form-label">Location</label>
+    <input type="text"  class="form-control"  id="validationCustom03" formControlName="location" required>
+  </div>
+
+  <div class="col-12">
     <button type="submit" class="btn btn-primary" [disabled]="eventForm.invalid">
       Add Event</button>
   </div>
+
   <div *ngIf="title.invalid && (title.dirty || title.touched)" class="alert alert-danger" >
-    <div *ngIf="title.errors?.['required']">
-      Title is required
+    <div *ngIf="title.errors?.['required']" >
+        Title is required
     </div>
     <div *ngIf="title.errors?.['minlength']">
       Title must be at least 3 characters
@@ -25,12 +37,3 @@
   </div>
 </form>
 
-
-
-<div class="alert alert-danger" class="col-md-6">
-  <label for="validationServer03" class="form-label">City</label>
-  <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
-  <div  class="invalid-feedback">
-    Please provide a valid city.
-  </div>
-</div>
