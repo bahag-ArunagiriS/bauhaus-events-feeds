@@ -6,11 +6,22 @@ import { AppComponent } from './app.component';
 import { EventsListComponent } from './events/events-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EventFormComponent } from './events/event-form.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, EventsListComponent, EventFormComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    EventsListComponent,
+    EventFormComponent,
+    NavbarComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
