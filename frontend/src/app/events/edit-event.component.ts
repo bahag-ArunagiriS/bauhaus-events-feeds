@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { EventsService } from './events.service';
 import { Event } from '../models/event';
 import { FormControl, FormGroup, FormBuilder, Form } from '@angular/forms';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-edit-event',
@@ -12,6 +13,7 @@ import { FormControl, FormGroup, FormBuilder, Form } from '@angular/forms';
 export class EditEventComponent implements OnInit {
   event!: Event;
   eventForm!: FormGroup;
+  errorMessage = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -19,11 +21,27 @@ export class EditEventComponent implements OnInit {
     private fb: FormBuilder
   ) {}
 
+  showError(error: any): void {
+    this.errorMessage = error.message
+      ? error.message
+      : error.status
+      ? `${error.status} - ${error.statusText}`
+      : 'Server error';
+  }
+
   getEvent(id: string) {
-    this.eventsService.getEvent(id).subscribe((event) => {
-      this.event = event;
-      this.initializeForm(event);
-    });
+    this.eventsService
+      .getEvent(id)
+      .pipe(
+        catchError((err) => {
+          this.showError(err);
+          return of(); //{} gives error
+        })
+      )
+      .subscribe((event) => {
+        this.event = event;
+        this.initializeForm();
+      });
   }
 
   edit() {
@@ -36,22 +54,36 @@ export class EditEventComponent implements OnInit {
       this.event.likes
     );
 
-    this.eventsService.editEvent(editedEvent).subscribe((data) => {
-      console.log(data);
-    });
+    this.eventsService
+      .editEvent(editedEvent)
+      .pipe(
+        catchError((err) => {
+          this.showError(err);
+          return of({});
+        })
+      )
+      .subscribe((data) => console.log(data));
     this.eventForm.reset();
   }
 
   delete(id: string) {
-    console.log('deleted');
-    this.eventsService.deleteEvent(id).subscribe((data) => console.log(data));
+    this.eventsService
+      .deleteEvent(id)
+      .pipe(
+        catchError((err) => {
+          this.showError(err);
+          return of({});
+        })
+      )
+      .subscribe((data) => console.log(data));
+    this.eventForm.reset();
   }
 
-  initializeForm(event: Event) {
+  initializeForm() {
     this.eventForm = this.fb.group({
-      title: [event.title],
-      description: [event.description],
-      location: [event.location],
+      title: [this.event.title],
+      description: [this.event.description],
+      location: [this.event.location],
     });
   }
 
