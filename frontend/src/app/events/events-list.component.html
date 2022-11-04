@@ -1,14 +1,13 @@
 <!-- <app-event-form (createEvent)="addEvent($event)"></app-event-form>
 <br /> -->
-
 <div class="card event-list-container">
   <div
     *ngFor="let event of modelEvents"
     class="card-body event-list-card-container"
   >
     <div class="event-list-control-btns">
-      <button class="event-list-edit-btn">&#9998;</button>
-      <button class="event-list-delete-btn">x</button>
+      <a [routerLink]="['edit/' + event.id]" class="nav-link navbar-account"><button class="event-list-edit-btn">&#9998;</button></a>
+      <!--<button class="event-list-delete-btn">x</button>-->
     </div>
     <img
       src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"
@@ -19,7 +18,7 @@
     <h5 class="card-title">{{ event.title }}</h5>
     <p class="card-text">{{ event.description }}</p>
     <p class="card-text">{{ event.location }}</p>
-    <a href="#" class="btn btn-primary">Like</a>
-    <span>{{ event.likes }}</span>
+<!--    <a href="#" class="btn btn-primary">Like</a>
+    <span>{{ event.likes }}</span>-->
   </div>
 </div>

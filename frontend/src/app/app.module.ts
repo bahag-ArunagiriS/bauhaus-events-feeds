@@ -9,6 +9,7 @@ import { EventFormComponent } from './events/event-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IonicModule } from '@ionic/angular';
+import { EditEventComponent } from './events/edit-event.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { IonicModule } from '@ionic/angular';
     EventsListComponent,
     EventFormComponent,
     NavbarComponent,
+    EditEventComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,7 @@ import { IonicModule } from '@ionic/angular';
     HttpClientModule,
     ReactiveFormsModule,
     IonicModule.forRoot(),
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],
