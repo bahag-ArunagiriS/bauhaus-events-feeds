@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditEventComponent } from '../../../../../../team_Project/bauhaus-events-feeds/frontend/src/app/events/edit-event.component';
+import { EditEventComponent } from './edit-event.component';
 
 describe('EditEventComponent', () => {
   let component: EditEventComponent;
