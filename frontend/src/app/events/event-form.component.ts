@@ -35,6 +35,7 @@ export class EventFormComponent implements OnInit {
     //emit is used to fire an event
     this.createEvent.emit(
       new Event(form.title,'',form.description, form.location,0));
+    this.eventForm.reset();
   }
 
 
