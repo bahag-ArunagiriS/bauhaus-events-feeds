@@ -1,14 +1,23 @@
 <nav class="navbar navbar-expand-lg navbar-component">
-    <div class="container-fluid navbar-component-container">
-        <div class="navbar-component-logo-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Bauhaus_logo.svg/1600px-Bauhaus_logo.svg.png"
-                alt="BAUHAUS logo" width="250px">
-            <p class="navbar-brand navbar-component-logo-text">Events Feed</p>
-        </div>
-        <form class="d-flex navbar-component-search" role="search">
-            <input class="form-control me-2 navbar-component-search-input" type="search" placeholder="Search"
-                aria-label="Search">
-        </form>
-        <a class="nav-link navbar-account" href="#">My account</a>
+  <div class="container-fluid navbar-component-container">
+    <div class="navbar-component-logo-container">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Bauhaus_logo.svg/1600px-Bauhaus_logo.svg.png"
+        alt="BAUHAUS logo"
+        width="250px"
+      />
+      <p class="navbar-brand navbar-component-logo-text">Events Feed</p>
     </div>
+    <form class="d-flex navbar-component-search" role="search">
+      <input
+        class="form-control me-2 navbar-component-search-input"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </form>
+    <a routerLink="/" class="nav-link navbar-account">Events List</a>
+    <a routerLink="/add" class="nav-link navbar-account">Add Event</a>
+    <!-- <a class="nav-link navbar-account" href="#">My account</a> -->
+  </div>
 </nav>

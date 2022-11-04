@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EventFormComponent } from './events/event-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    IonicModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

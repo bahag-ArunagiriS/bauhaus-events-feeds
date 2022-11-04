@@ -1,3 +1,5 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';
-@import 'app/navbar/navbar.component.css';
-@import 'app/events/events-list.component.css'
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "app/navbar/navbar.component.css";
+@import "app/events/events-list.component.css";
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
