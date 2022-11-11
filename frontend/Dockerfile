@@ -6,4 +6,4 @@ RUN npm install
 COPY . .
 RUN ng build
 FROM nginx
-COPY --from=b /usr/src/app/dist/frontend /usr/share/nginx/html
+COPY --from=b /usr/src/app/dist/bauhaus-events-feeds/frontend /usr/share/nginx/html
