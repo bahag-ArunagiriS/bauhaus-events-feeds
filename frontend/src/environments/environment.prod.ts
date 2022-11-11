@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'https://team-app-eventsapi-fgntpmkwiq-ew.a.run.app'
 };
