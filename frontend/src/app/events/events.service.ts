@@ -16,14 +16,14 @@ export class EventsService {
   }
   addEvent(event: Event): Observable<Event> {
     return this.httpClient.post<Event>
-    (`${environment.url}/event`, event)
+    (`${environment.url}/events`, event)
   }
   getEvent(id: string): Observable<Event> {
     return this.httpClient.get<Event>(`${environment.url}/event/${id}`);
   }
 
   editEvent(event: Event): Observable<Event> {
-    return this.httpClient.put<Event>(`${environment.url}/event`, event);
+    return this.httpClient.put<Event>(`${environment.url}/events`, event);
   }
 
   deleteEvent(id: string): Observable<Event> {
